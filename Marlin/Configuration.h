@@ -49,7 +49,7 @@
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
-// #define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
+#define MACHINE_UUID "6c4abd24-3b6b-11e7-a919-92ebcb67fe33"
 
 // This defines the number of extruders
 #define EXTRUDERS 1
@@ -186,7 +186,7 @@
 // Comment the following line to disable PID and enable bang-bang.
 #define PIDTEMP
 #define BANG_MAX 255 // limits current to nozzle while in bang-bang mode; 255=full current
-#define PID_MAX 125 // limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
+#define PID_MAX 225 // limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
 #ifdef PIDTEMP
   //#define PID_DEBUG // Sends debug data to the serial port.
   //#define PID_OPENLOOP 1 // Puts PID in open loop. M104/M140 sets the output power from 0 to PID_MAX
@@ -197,7 +197,7 @@
   #define PID_dT ((OVERSAMPLENR * 10.0)/(F_CPU / 64.0 / 256.0)) //sampling period of the temperature routine
 
 // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
-
+ 
 // Ultimaker
 //    #define  DEFAULT_Kp 22.2
 //    #define  DEFAULT_Ki 1.08
@@ -485,11 +485,11 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
     //#define TOUCH_PROBE_RETRACT_3_FEEDRATE HOMING_FEEDRATE_Z
 
     // Kossel Pro
-    #define TOUCH_PROBE_DEPLOY_1_X -105.00 // Move left but not quite so far that we'll bump the belt
+    #define TOUCH_PROBE_DEPLOY_1_X -100.00 // Move left but not quite so far that we'll bump the belt
     #define TOUCH_PROBE_DEPLOY_1_Y 0.00
     #define TOUCH_PROBE_DEPLOY_1_Z 100.0
     #define TOUCH_PROBE_DEPLOY_1_FEEDRATE HOMING_FEEDRATE_X
-    #define TOUCH_PROBE_DEPLOY_2_X -110.00 // Move outward to position deploy pin to the left of the arm
+    #define TOUCH_PROBE_DEPLOY_2_X -100.00 // Move outward to position deploy pin to the left of the arm
     #define TOUCH_PROBE_DEPLOY_2_Y -125.00
     #define TOUCH_PROBE_DEPLOY_2_Z 100.0
     #define TOUCH_PROBE_DEPLOY_2_FEEDRATE HOMING_FEEDRATE_X
@@ -498,14 +498,14 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
     #define TOUCH_PROBE_DEPLOY_3_Z 100.0
     #define TOUCH_PROBE_DEPLOY_3_FEEDRATE (HOMING_FEEDRATE_X/2)
 
-    #define TOUCH_PROBE_RETRACT_1_X 36.00 // Line up with bed retaining clip
-    #define TOUCH_PROBE_RETRACT_1_Y -122.00
+    #define TOUCH_PROBE_RETRACT_1_X 40.00 // Line up with bed retaining clip
+    #define TOUCH_PROBE_RETRACT_1_Y -125.00
     #define TOUCH_PROBE_RETRACT_1_Z 75.0
     #define TOUCH_PROBE_RETRACT_1_FEEDRATE HOMING_FEEDRATE_X
-    #define TOUCH_PROBE_RETRACT_2_X 36.00 // move down to retract probe
-    #define TOUCH_PROBE_RETRACT_2_Y -122.00
-    #define TOUCH_PROBE_RETRACT_2_Z 5.0
-    #define TOUCH_PROBE_RETRACT_2_FEEDRATE (HOMING_FEEDRATE_Z/4)
+    #define TOUCH_PROBE_RETRACT_2_X 40.00 // move down to retract probe
+    #define TOUCH_PROBE_RETRACT_2_Y -125.00
+    #define TOUCH_PROBE_RETRACT_2_Z 14.0
+    #define TOUCH_PROBE_RETRACT_2_FEEDRATE (HOMING_FEEDRATE_Z/8)
     #define TOUCH_PROBE_RETRACT_3_X 0.0  // return to 0,0,100
     #define TOUCH_PROBE_RETRACT_3_Y 0.0
     #define TOUCH_PROBE_RETRACT_3_Z 100.0
@@ -579,7 +579,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = false; // set to true to invert the logic o
 #define XYZ_PULLEY_TEETH 20
 #define XYZ_STEPS (XYZ_FULL_STEPS_PER_ROTATION * XYZ_MICROSTEPS / double(XYZ_BELT_PITCH) / double(XYZ_PULLEY_TEETH))
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {XYZ_STEPS, XYZ_STEPS, XYZ_STEPS, 184.8}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {XYZ_STEPS, XYZ_STEPS, XYZ_STEPS, 245.0}
 #define DEFAULT_MAX_FEEDRATE          {200, 200, 200, 200}    // (mm/sec)
 #define DEFAULT_MAX_ACCELERATION      {9000,9000,9000,9000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
